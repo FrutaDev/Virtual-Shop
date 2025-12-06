@@ -1,0 +1,112 @@
+.title {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4b8bfd, #6a67ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* TARJETA FORMULARIO */
+.form {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(70, 70, 120, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeIn 0.35s ease;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* INPUTS */
+.form-control {
+    padding: 14px 16px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #d8dce6;
+    background: #fbfcff;
+    transition: all 0.25s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 0 0 rgba(90, 140, 255, 0);
+}
+
+.form-control:hover {
+    border-color: #b5bcd0;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4b8bfd;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(75, 139, 253, 0.3);
+}
+
+/* BOTÓN PRIMARIO */
+.btn-primary {
+    background: linear-gradient(180deg, #4b8bfd, #3a6ff6);
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .25s cubic-bezier(.4, 0, .2, 1);
+    font-weight: 600;
+    letter-spacing: .3px;
+    box-shadow: 0 6px 16px rgba(75, 139, 253, 0.35);
+    width: 30%;
+    margin: 0 auto;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(75, 139, 253, 0.45);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 14px rgba(75, 139, 253, 0.35);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+    main {
+        margin-top: 40px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+    .form {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+    .form-control {
+        padding: 12px 14px;
+    }
+
+    .btn-primary {
+        padding: 12px;
+        font-size: 15px;
+    }
+}

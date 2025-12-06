@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/admin/add-product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main>
+                <div class="container">
+                    <h1 class="title">
+                        <%= editMode ? 'Edit' : 'Add' %> Product
+                    </h1>
+                    <form class="form"
+                        action="/admin/<% if (editMode) { %>edit-product/<%= product.id %><% } else { %>add-product<% } %>"
+                        method="post">
+                        <input class="form-control" type="text" name="title" placeholder="Title"
+                            value="<% if (editMode) { %><%= product.title %><% } %>">
+                        <input class="form-control" type="text" name="price" placeholder="Price"
+                            value="<% if (editMode) { %><%= product.price %><% } %>" step="0.01">
+                        <input class="form-control" type="text" name="imageUrl" placeholder="Image URL"
+                            value="<% if (editMode) { %><%= product.imageUrl %><% } %>">
+                        <input class="form-control" type="text" name="description" placeholder="Description"
+                            value="<% if (editMode) { %><%= product.description %><% } %>">
+                        <button class="btn btn-primary" type="submit">
+                            <%= editMode ? 'Edit' : 'Add' %> Product
+                        </button>
+                    </form>
+                </div>
+            </main>
+            <%- include('../includes/end.ejs') %>

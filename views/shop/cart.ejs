@@ -1,0 +1,63 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/shop/cart.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main>
+                <div class="cart-container">
+                    <h1>Cart</h1>
+                    <% if (products.length> 0) { %>
+                        <table class="table">
+                            <thead class="table-main-head">
+                                <tr>
+                                    <th class="text-head">
+                                        Product
+                                    </th>
+                                    <th class="text-head">
+                                        Price
+                                    </th>
+                                    <th class="text-head">
+                                        Quantity
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-main-body">
+                                <% products.forEach(product=> { %>
+                                    <tr>
+                                        <td class="text-data">
+                                            <%= product.title %>
+                                        </td>
+                                        <td class="text-data">
+                                            <%= product.price.toFixed(2) %>
+                                        </td>
+                                        <td class="text-data">
+                                            <%= product.CartItem.quantity %>
+                                        </td>
+                                        <td>
+                                            <form action="/cart/delete-item/<%= product.id %>" method="post">
+                                                <input type="number" name="quantity" class="quantity-input"
+                                                    value="<%= product.CartItem.quantity %>" min="1">
+                                                <button type="submit" class="btn-delete">Delete</button>
+                                                <input type="hidden" name="productId" value="<%= product.id %>">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                            <tfoot class="table-main-foot">
+                                <td class="text-data"></td>
+                                <td class="text-total">
+                                    Total Price
+                                </td>
+                                <td class="text-total">
+                                    <%= totalPrice %>
+                                </td>
+                            </tfoot>
+                        </table>
+                        <% } else { %>
+                            <h2 class="text-no-products">No products in cart</h2>
+                            <% } %>
+                </div>
+            </main>
+            <%- include('../includes/end.ejs') %>
