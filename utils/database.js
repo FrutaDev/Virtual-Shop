@@ -4,7 +4,7 @@ const env = require('getenv');
 
 const sequelize = new Sequelize(
     'shop',
-    'root',
+    env('USERDB'),
     env('sqlSecret'),
     {
         dialect: 'mysql',

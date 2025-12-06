@@ -1,0 +1,72 @@
+/* ====== Contenedor general ====== */
+.text-title {
+    text-align: center;
+    margin: 20px 0 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* ====== Tabla adaptada para verse como lista ====== */
+.table {
+    width: 95%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ====== Encabezado ====== */
+.table-main-head {
+    background: #f7f7f7;
+}
+
+.text-head {
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+/* ====== Filas ====== */
+.table-main-body tr {
+    transition: background 0.25s;
+}
+
+.table-main-body tr:hover {
+    background: #fafafa;
+}
+
+/* ====== Celdas ====== */
+.text-data {
+    padding: 14px;
+    font-size: 0.95rem;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+/* ====== Pie de tabla ====== */
+.table-main-foot td {
+    padding: 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    background: #fafafa;
+    color: #333;
+    border-top: 1px solid #e2e2e2;
+}
+
+.text-total {
+    text-align: right;
+}
+
+/* ====== Sin órdenes ====== */
+.text-no-orders {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 1.3rem;
+}

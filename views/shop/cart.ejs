@@ -47,14 +47,20 @@
                             </tbody>
                             <tfoot class="table-main-foot">
                                 <td class="text-data"></td>
+                                <td class="text-data"></td>
                                 <td class="text-total">
-                                    Total Price
+                                    Total Price:
                                 </td>
                                 <td class="text-total">
                                     <%= totalPrice %>
                                 </td>
                             </tfoot>
                         </table>
+                        <div class="btn-order-container">
+                            <form action="/order" method="post">
+                                <button type="submit" class="btn-order">Order</button>
+                            </form>
+                        </div>
                         <% } else { %>
                             <h2 class="text-no-products">No products in cart</h2>
                             <% } %>

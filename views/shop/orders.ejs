@@ -1,9 +1,59 @@
 <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/shop/orders.css">
     </head>
 
     <body>
         <%- include('../includes/navigation.ejs') %>
             <main>
-                <h1>Orders</h1>
+                <h1 class="text-title">Orders</h1>
+                <% if (orders.length> 0) { %>
+                    <% orders.forEach(order=> { %>
+                        <table class="table">
+                            <thead class="table-main-head">
+                                <tr>
+                                    <th class="text-head">
+                                        Order
+                                    </th>
+                                    <th class="text-head">
+                                        Price
+                                    </th>
+                                    <th class="text-head">
+                                        Quantity
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-main-body">
+                                <% order.products.forEach(product=> { %>
+                                    <tr>
+                                        <td class="text-data">
+                                            <%= product.title %>
+                                        </td>
+                                        <td class="text-data">
+                                            <%= product.price.toFixed(2) %>
+                                        </td>
+                                        <td class="text-data">
+                                            <%= product.OrderItem.quantity %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                            <tfoot class="table-main-foot">
+                                <td></td>
+                                <td class="text-total">
+                                    Total Price:
+                                </td>
+                                <td class="text-total">
+                                    <% let totalPrice=order.products.reduce((total, product)=> {
+                                        return total + product.price * product.OrderItem.quantity;
+                                        }, 0);
+                                        %>
+                                        <%= totalPrice.toFixed(2) %>
+                                </td>
+                            </tfoot>
+                        </table>
+                        <% }) %>
+                            <% } else { %>
+                                <h2 class="text-no-orders">No orders found</h2>
+                                <% } %>
             </main>
             <%- include('../includes/end.ejs') %>

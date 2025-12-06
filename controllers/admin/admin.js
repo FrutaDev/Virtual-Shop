@@ -1,4 +1,3 @@
-const Product = require('../../models/product');
 
 const getAdminProducts = (req, res) => {
     req.user.getProducts()

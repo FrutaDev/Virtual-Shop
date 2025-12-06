@@ -1,71 +1,89 @@
+/* ===== Container general ===== */
 .cart-container {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
-.cart-container h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    color: #333;
+/* ===== Tabla pero disfrazada como lista ===== */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    /* separa filas visualmente */
+}
+
+.table-main-head tr th {
+    text-align: left;
+    padding-bottom: 8px;
+    color: #444;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.table-main-head th {
-    background: #2c3e50;
-    color: white;
-    padding: 14px;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+/* ===== Cada producto como card horizontal ===== */
+.table-main-body tr {
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
 }
 
 .table-main-body td {
-    padding: 15px;
+    padding: 1.2rem;
+    vertical-align: middle;
+}
+
+/* ===== Texto ===== */
+.text-data {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+}
+
+.text-total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+}
+
+/* ===== Input cantidad ===== */
+.quantity-input {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     text-align: center;
-    border-bottom: 1px solid #e6e6e6;
-    font-size: 0.95rem;
+    margin-right: 10px;
 }
 
-.table-main-body tr:hover {
-    background: #f7f9fc;
-}
-
-.table-main-foot td {
-    padding: 18px;
-    font-weight: bold;
-    background: #fafafa;
-    border-top: 2px solid #ddd;
-    font-size: 1.05rem;
-}
-
-.text-no-products {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1.4rem;
-    color: #555;
-}
-
+/* ===== Botón eliminar ===== */
 .btn-delete {
+    background-color: #ff4444;
+    color: white;
     padding: 8px 14px;
     border: none;
-    background-color: #e74c3c;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 8px;
     font-size: 0.9rem;
-    transition: background 0.2s ease;
+    cursor: pointer;
+    transition: background .2s;
 }
 
 .btn-delete:hover {
-    background-color: #c0392b;
+    background-color: #d93636;
+}
+
+/* ===== Sin productos ===== */
+.text-no-products {
+    text-align: center;
+    margin-top: 3rem;
+    color: #555;
+}
+
+/* ===== Total ===== */
+.table-main-foot {
+    margin-top: 20px;
+}
+
+.table-main-foot td {
+    padding: 1rem 0;
 }
